@@ -1,11 +1,11 @@
 var VideoListEntryView = Backbone.View.extend({
 
+  template: templateURL('src/templates/videoListEntry.html'),
+
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this.$el;
   },
-
-  template: templateURL('src/templates/videoListEntry.html'),
 
   events: {
     'click': function() {
