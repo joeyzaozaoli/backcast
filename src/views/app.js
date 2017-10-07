@@ -1,8 +1,11 @@
 var AppView = Backbone.View.extend({
 
   initialize: function() {
-    this.videos = new Videos(window.exampleVideoData);
+    this.videos = new Videos([]);
     this.currentVideo = this.videos.at(0);
+    this.videos.on('sync', this.render, this);
+
+    this.videos.search('swan lake');
     this.render();
   },
 
