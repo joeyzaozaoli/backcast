@@ -14,7 +14,7 @@ var VideoListView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.collection.on('sync', this.render, this);
+    this.collection.on('sync search', this.render, this);
   }
 
 });

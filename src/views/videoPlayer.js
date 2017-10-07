@@ -16,6 +16,11 @@ var VideoPlayerView = Backbone.View.extend({
       this.model = video;
       this.render();
     }, this);
+
+    this.collection.on('search', function(videos) {
+      this.model = videos.at(0);
+      this.render();
+    }, this);
   }
 
 });
